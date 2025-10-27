@@ -78,11 +78,25 @@ services:
       bash -c "
       php artisan migrate --force &&
       php artisan db:seed --force &&
-      while true; do
-        php artisan schedule:run >> /dev/null 2>&1;
-        sleep 60;
-      done
+      php artisan schedule:work
       "
+    depends_on:
+      - laravel_app
+      - mysql
+    networks:
+      - laravel
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: worker
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    command: >
+      bash -c "php artisan queue:work --tries=3 --timeout=90"
     depends_on:
       - laravel_app
       - mysql

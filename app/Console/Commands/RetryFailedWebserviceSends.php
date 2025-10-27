@@ -36,7 +36,7 @@ class RetryFailedWebserviceSends extends Command
             }
 
             $lastTryAt = $lastAttempt->created_at;
-            if ($lastTryAt->diffInMinutes(now()) >= 1) {
+            if ($lastTryAt->diffInMinutes(now()) >= 60) {
                 dispatch(new SendTicketToWebService($ticket));
                 Log::info("Re-dispatched SendTicketToWebService for ticket {$ticket->id} (last attempt at {$lastTryAt})");
             }

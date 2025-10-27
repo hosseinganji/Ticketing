@@ -14,8 +14,12 @@ class HttpWebserviceClient implements WebserviceClientInterface
     {
         // $this->endpoint = route('webservice.send');
 
-        $this->endpoint = route('webservice.send', [], false);
-        $this->endpoint = 'http://localhost:8000' . $this->endpoint;
+        // $this->endpoint = route('webservice.send', [], false);
+        // $this->endpoint = 'http://localhost:8000' . $this->endpoint;
+
+        $path = route('webservice.send', [], false);
+        $this->endpoint = 'http://nginx' . $path;
+
     }
 
     public function sendTicket(Ticket $ticket): Response

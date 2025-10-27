@@ -12,8 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('webservice:retry-failed')->hourly();
-        $schedule->command('webservice:retry-failed')->everyTenSeconds();
+        $schedule->command('webservice:retry-failed')->hourly();
 
     }
 
