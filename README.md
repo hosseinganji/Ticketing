@@ -11,43 +11,39 @@
 اطمینان حاصل کنید که موارد زیر روی سیستم شما نصب هستند:
 
 *   PHP >= 8.1
-    
 *   Composer
-    
 *   MySQL یا MariaDB
-    
-*   Node.js و npm (در صورت نیاز به ساخت assetها)
-    
 *   Git
     
 
 ### ۲. کلون و نصب پکیج‌ها
 
-`   git clone https://github.com/hosseinganji/Ticketing.git  cd ticketing  composer install   `
+`git clone https://github.com/hosseinganji/Ticketing.git  cd ticketing  composer install`
 
 ### ۳. تنظیم فایل محیطی .env
 
 فایل .env.example را کپی کرده و به .env تغییر نام دهید:
 
-`   cp .env.example .env   `
+`cp .env.example .env`
 
 مقادیر مهم برای این پروژه:
 
-`   APP_NAME="Ticketing System"  APP_ENV=local  APP_KEY=  APP_DEBUG=true  APP_URL=http://localhost:8000  DB_CONNECTION=mysql  DB_HOST=127.0.0.1  DB_PORT=3306  DB_DATABASE=ticketing  DB_USERNAME=root  DB_PASSWORD=  QUEUE_CONNECTION=database  MAIL_MAILER=log   `
+`QUEUE_CONNECTION=databas`
+`MAIL_MAILER=log`
 
 سپس کلید اپلیکیشن را بساز:
 
-`   php artisan key:generate   `
+`php artisan key:generate`
 
 ### ۴. ساخت جدول‌ها و لینک storage
 
-`   php artisan migrate  php artisan storage:link   `
+`php artisan migrate  php artisan storage:link`
 
 ### ۵. ساخت ادمین‌ها
 
 Seeder مخصوص ادمین‌ها را اجرا کن:
 
-`   php artisan db:seed --class=AdminsSeeder   `
+`php artisan db:seed --class=AdminsSeeder`
 
 اکنون دو ادمین پیش‌فرض ساخته می‌شوند 👇
 
@@ -63,39 +59,21 @@ password: 123456
 
 **اجرای سرور اصلی:**
 
-`   php artisan serve   `
+`php artisan serve`
 
 **اجرای صف (Queue Worker):**
 
-`   php artisan queue:work   `
+`php artisan queue:work`
 
 **اجرای زمان‌بندی (Scheduler):**
 
-`   php artisan schedule:work   `
+`php artisan schedule:work`
 
 ### ۷. اجرای تست‌ها
 
 برای اطمینان از صحت عملکرد گردش کار تیکت:
 
-`   php artisan test   `
-
-🧩 ساختار پروژه
----------------
-
-`   app/   
-        ├── Enums/              # شامل Enum وضعیت تیکت‌ها   
-        ├── Http/   │    
-            ├── Controllers/   # کنترلرهای اصلی سیستم   │    
-            ├── Middleware/   
-            ├── Models/             # مدل‌های اصلی مثل Ticket, User   
-    database/   
-        ├── factories/          # فایل‌های فکتوری برای داده‌های تستی   
-        ├── seeders/            # ایجاد داده اولیه (AdminsSeeder)  
-    resources/   
-        ├── views/              # قالب‌ها (پنل ادمین، تیکت‌ها)   
-    routes/   
-        ├── web.php             # مسیرهای وب   
-        ├── api.php             # api فرضی   `
+`php artisan test`
 
 ⚙️ معماری و منطق گردش کار
 -------------------------
