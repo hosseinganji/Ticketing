@@ -45,15 +45,16 @@ Seeder مخصوص ادمین‌ها را اجرا کن:
 
 `php artisan db:seed --class=AdminsSeeder`
 
-اکنون دو ادمین پیش‌فرض ساخته می‌شوند 👇
+اکنون دو ادمین پیش‌فرض ساخته می‌شوند
 
-Admin 1
-email: admin1@gmail.com
-password: 123456
+
+*   Admin 1
+*   email: admin1@gmail.com
+*   password: 123456
 ----------
-Admin 2
-gmail: admin2@gmail.com
-password: 123456
+*   Admin 2
+*   gmail: admin2@gmail.com
+*   password: 123456
 
 ### ۶. اجرای سرویس‌ها
 
