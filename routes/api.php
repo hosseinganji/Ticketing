@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/webservice/send', function (Request $request) {
+    $rand = rand(1, 10);
+    if ($rand <= 3) { // 30% success
+        return response()->json(['message' => 'ok'], 200);
+    }
+
+    $errors = [500, 500, 503, 422];
+    $status = $errors[array_rand($errors)];
+    Log::info('status: ' . $status);
+    return response()->json(['message' => 'error', 'code' => $status], $status);
+
+})->name("webservice.send");

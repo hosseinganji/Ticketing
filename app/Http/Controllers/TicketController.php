@@ -32,10 +32,10 @@ class TicketController extends Controller
             'user_id' => Auth::id(),
             'title' => $request->title,
             'description' => $request->description,
-            'file_path' => $path,
+            'attachment_path' => $path,
             'status' => TicketStatus::Submitted,
         ]);
 
-        return redirect()->route('tickets.index')->with('success', 'تیکت با موفقیت ارسال شد.');
+        return redirect()->route('dashboard')->with('success', 'تیکت با موفقیت ارسال شد.');
     }
 }

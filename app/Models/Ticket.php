@@ -53,4 +53,18 @@ class Ticket extends Model
         $this->status = $status->value;
         $this->save();
     }
+
+    public function getStatusLabelAttribute(): string
+    {
+        return match($this->status) {
+            TicketStatus::Draft->value => 'پیش ‌نویس',
+            TicketStatus::Submitted->value => 'ارسال شده',
+            TicketStatus::ApprovedByAdmin1->value => 'تایید شده توسط مدیر ۱',
+            TicketStatus::ApprovedByAdmin2->value => 'تایید شده توسط مدیر ۲',
+            TicketStatus::RejectedByAdmin1->value => 'رد شده توسط مدیر ۱',
+            TicketStatus::RejectedByAdmin2->value => 'رد شده توسط مدیر ۲',
+            TicketStatus::SentToWebservice->value => 'ارسال شده به وب‌ سرویس',
+            default => 'نامشخص',
+        };
+    }
 }

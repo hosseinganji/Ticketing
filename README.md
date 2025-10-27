@@ -1,66 +1,134 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+سامانه تیکتینگ Laravel
+=========================
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+این پروژه یک سامانه تیکتینگ (مدیریت درخواست‌ها) است که با فریم‌ورک **Laravel** توسعه داده شده است.کاربران می‌توانند تیکت ارسال کنند و دو سطح ادمین (Admin1 و Admin2) وظیفه‌ی بررسی، تأیید یا رد تیکت‌ها را دارند.
 
-## About Laravel
+راهنمای نصب و اجرا
+---------------------
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### ۱. پیش‌نیازها
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+اطمینان حاصل کنید که موارد زیر روی سیستم شما نصب هستند:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+*   PHP >= 8.1
+    
+*   Composer
+    
+*   MySQL یا MariaDB
+    
+*   Node.js و npm (در صورت نیاز به ساخت assetها)
+    
+*   Git
+    
 
-## Learning Laravel
+### ۲. کلون و نصب پکیج‌ها
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/yourusername/ticketing.git  cd ticketing  composer install   `
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### ۳. تنظیم فایل محیطی .env
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+فایل .env.example را کپی کرده و به .env تغییر نام دهید:
 
-## Laravel Sponsors
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cp .env.example .env   `
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+مقادیر مهم برای این پروژه:
 
-### Premium Partners
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   APP_NAME="Ticketing System"  APP_ENV=local  APP_KEY=  APP_DEBUG=true  APP_URL=http://localhost:8000  DB_CONNECTION=mysql  DB_HOST=127.0.0.1  DB_PORT=3306  DB_DATABASE=ticketing  DB_USERNAME=root  DB_PASSWORD=  QUEUE_CONNECTION=database  MAIL_MAILER=log   `
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+سپس کلید اپلیکیشن را بساز:
 
-## Contributing
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   php artisan key:generate   `
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### ۴. ساخت جدول‌ها و لینک storage
 
-## Code of Conduct
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   php artisan migrate  php artisan storage:link   `
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### ۵. ساخت ادمین‌ها
 
-## Security Vulnerabilities
+Seeder مخصوص ادمین‌ها را اجرا کن:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   php artisan db:seed --class=AdminsSeeder   `
 
-## License
+اکنون دو ادمین پیش‌فرض ساخته می‌شوند 👇
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+نقشایمیلرمز عبورسطحAdmin 1admin1@gmail.com123456سطح ۱Admin 2admin2@gmail.com123456سطح ۲
+
+### ۶. اجرای سرویس‌ها
+
+**اجرای سرور اصلی:**
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   php artisan serve   `
+
+**اجرای صف (Queue Worker):**
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   php artisan queue:work   `
+
+**اجرای زمان‌بندی (Scheduler):**
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   php artisan schedule:work   `
+
+### ۷. اجرای تست‌ها
+
+برای اطمینان از صحت عملکرد گردش کار تیکت:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   php artisan test   `
+
+🧩 ساختار پروژه
+---------------
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   app/   ├── Enums/              # شامل Enum وضعیت تیکت‌ها   ├── Http/   │    ├── Controllers/   # کنترلرهای اصلی سیستم   │    ├── Middleware/   ├── Models/             # مدل‌های اصلی مثل Ticket, User   └── ...  database/   ├── factories/          # فایل‌های فکتوری برای داده‌های تستی   ├── seeders/            # ایجاد داده اولیه (AdminsSeeder)  resources/   ├── views/              # قالب‌ها (پنل ادمین، تیکت‌ها)   └── ...  routes/   ├── web.php             # مسیرهای وب   └── api.php             # مسیرهای API در صورت وجود   `
+
+⚙️ معماری و منطق گردش کار
+-------------------------
+
+1.  **کاربر** تیکت ایجاد می‌کند (وضعیت: draft → submitted)
+    
+2.  **ادمین ۱** تیکت را بررسی می‌کند:
+    
+    *   اگر تایید کند → approved\_by\_admin1
+        
+    *   اگر رد کند → rejected\_by\_admin1
+        
+3.  **ادمین ۲** در صورت تایید Admin1 تیکت را بررسی می‌کند:
+    
+    *   تایید → approved\_by\_admin2
+        
+    *   رد → rejected\_by\_admin2
+        
+4.  در نهایت، تیکت در صورت تایید کامل به وب‌سرویس ارسال می‌شود (sent\_to\_webservice).
+    
+
+🧠 فهرست قابلیت‌ها
+------------------
+
+*   احراز هویت کاربران و ادمین‌ها
+    
+*   سطوح دسترسی چندمرحله‌ای (Admin1, Admin2)
+    
+*   ایجاد، مشاهده، و مدیریت تیکت‌ها
+    
+*   آپلود فایل ضمیمه
+    
+*   صف (Queue) برای وظایف پس‌زمینه
+    
+*   سیستم زمان‌بندی (Scheduler)
+    
+*   نمایش وضعیت هر تیکت بر اساس Enum
+    
+*   تست واحد (Unit Test) برای منطق گردش کار تیکت‌ها
+    
+*   رابط کاربری با Bootstrap 5 و فونت فارسی Vazir
+    
+
+💡 فرضیات طراحی
+---------------
+
+*   هر تیکت ابتدا توسط Admin1 بررسی می‌شود و تنها در صورت تایید به Admin2 می‌رسد.
+    
+*   فقط Admin2 می‌تواند تصمیم نهایی را بگیرد.
+    
+*   تمام عملیات حساس (تغییر وضعیت، تایید، رد) در سطح سرور انجام می‌شود.
+    
+*   فایل‌ها در مسیر storage/app/public ذخیره و با php artisan storage:link در دسترس قرار می‌گیرند.
+    
+*   ارتباط بین Laravel و پایگاه داده از نوع MySQL است، ولی می‌توان آن را تغییر داد.

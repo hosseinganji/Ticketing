@@ -11,3 +11,4 @@ enum TicketStatus: string
     case RejectedByAdmin2 = 'rejected_by_admin2';
     case SentToWebservice = 'sent_to_webservice';
 }
+
