@@ -1,4 +1,32 @@
-سامانه تیکتینگ Laravel
+سامانه تیکتینگ لاراول
+==============================
+
+روش اول: اجرای پروژه با Docker
+==============================
+
+1.  `docker-compose up --build -d`
+    
+2.  `docker ps`
+    
+3.  `docker exec -it laravel\_app php artisan migrate --seeddocker exec -it laravel\_app php artisan key:generate`
+    
+4.  **دسترسی به phpMyAdmin**
+    
+    *   آدرس: [http://localhost:8081](http://localhost:8081)
+        
+    *   Host: mysql
+        
+    *   User: root
+        
+    *   Password: (مطابق فایل docker-compose)
+        
+5.  **مشاهده پروژه در مرورگر**
+    
+    *   آدرس: [http://localhost:8000](http://localhost:8000)
+  
+      
+
+روش دوم: اجرای پروژه به صورت معمول
 =========================
 
 این پروژه یک سامانه تیکتینگ (مدیریت درخواست‌ها) است که با فریم‌ورک **Laravel** توسعه داده شده است.کاربران می‌توانند تیکت ارسال کنند و دو سطح ادمین (Admin1 و Admin2) وظیفه‌ی بررسی، تأیید یا رد تیکت‌ها را دارند.
